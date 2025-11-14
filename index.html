@@ -187,7 +187,9 @@ let waveTimer=0, waveActive=false;
 window.addEventListener('keydown', e => {
   keys[e.key] = true;
   if(!started && e.key === 'Enter') startGame();
-});
+  startScreen.addEventListener('click', () => {
+  if (!started) startGame();
+  });
 window.addEventListener('keyup', e => keys[e.key] = false);
 
 function startGame(){
@@ -384,3 +386,4 @@ function gameLoop(){
 </script>
 </body>
 </html>
+
